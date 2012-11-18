@@ -1,4 +1,7 @@
 Poodle::Application.routes.draw do
+
+  match '/about' :to => 'welcome#about'
+
   resources :riders
 
 
