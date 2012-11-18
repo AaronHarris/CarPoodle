@@ -1,0 +1,27 @@
+<h1>Listing riders</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Driver</th>
+    <th>Waitlist</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @riders.each do |rider| %>
+  <tr>
+    <td><%= rider.name %></td>
+    <td><%= rider.driver_id %></td>
+    <td><%= rider.waitlist_id %></td>
+    <td><%= link_to 'Show', rider %></td>
+    <td><%= link_to 'Edit', edit_rider_path(rider) %></td>
+    <td><%= link_to 'Destroy', rider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rider', new_rider_path %>

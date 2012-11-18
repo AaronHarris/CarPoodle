@@ -1,4 +1,16 @@
 Poodle::Application.routes.draw do
+  resources :riders
+
+
+  resources :waitlists
+
+
+  resources :drivers
+
+
+  resources :events
+
+
   get "welcome/index"
 
   # The priority is based upon order of creation:

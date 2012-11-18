@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Event:</b>
+  <%= @waitlist.event_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_waitlist_path(@waitlist) %> |
+<%= link_to 'Back', waitlists_path %>

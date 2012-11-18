@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @rider.name %>
+</p>
+
+<p>
+  <b>Driver:</b>
+  <%= @rider.driver_id %>
+</p>
+
+<p>
+  <b>Waitlist:</b>
+  <%= @rider.waitlist_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_rider_path(@rider) %> |
+<%= link_to 'Back', riders_path %>
