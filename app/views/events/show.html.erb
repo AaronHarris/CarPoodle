@@ -1,10 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Event Name:</b>
   <%= @event.name %>
 </p>
 
+<% event = @event %>
+<% drivers = Driver.where(event_id: @event) %>
+<% riders = Rider.where(driver_id: drivers) %>
 
+<p><u>Drivers </u></p>
+<% drivers.each do |driver| %>
+	<em><%= driver.name %></em><br/>
+<% end %>
+
+<% if drivers.empty? %>
+	<em>Currently no drivers...</em><br/>
+<% end %>
+<br />
+<p><u>Rider </u></p>
+<% riders.each do |rider| %>
+	<em><%= rider.name %></em><br/>
+<% end %>
+
+<% if riders.empty? %>
+	<em>Currently no riders...</em><br/>
+<% end %>
+
+
+<br/>
+<br />
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
