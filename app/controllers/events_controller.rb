@@ -30,6 +30,8 @@ class EventsController < ApplicationController
       format.html # new.html.erb
       format.json { render json: @event }
     end
+
+    render :action => 'new'
   end
 
   # GET /events/1/edit
