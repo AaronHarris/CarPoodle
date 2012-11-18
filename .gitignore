@@ -13,3 +13,42 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Editor Temporary Files #
+##########################
+.*.sw[a-z]
+*~
+\#*\#
+
+# Compiled source #
+###################
+*.class
+*.o
+*.so
+*.pyc
+*.exe
+bin/
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs #
+########
+*.log
+*.ctxt
+
+# OS generated files #
+######################
+Thumbs.db
+Desktop.ini
+.DS_Store
+.Trashes
+.Trash
