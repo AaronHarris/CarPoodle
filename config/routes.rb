@@ -14,7 +14,6 @@ Poodle::Application.routes.draw do
 
   resources :events
   get "events/new"
-  match '/new_event' => 'events#new'
 
 
 
