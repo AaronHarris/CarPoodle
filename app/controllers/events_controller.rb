@@ -24,14 +24,14 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.json
   def new
-    # @event = Event.new
+    @event = Event.new
 
     respond_to do |format|
-      format.html new.html.erb
+      format.html # new.html.erb
       format.json { render json: @event }
     end
 
-    render :action => 'new'
+    # render :action => 'new'
   end
 
   # GET /events/1/edit
