@@ -5,16 +5,14 @@ Poodle::Application.routes.draw do
   get "welcome/contact"
   match '/contact' => 'welcome#contact'
 
-  resources :riders
-
+#  resources :riders
+#  resources :drivers
 
   resources :waitlists
 
-
-  resources :drivers
-
-
-  resources :events
+  resources :events do
+    resources :drivers, :riders
+  end
 
 
   match '/:id/newuser' => 'events#newuser'
