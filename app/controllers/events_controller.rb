@@ -36,6 +36,15 @@ class EventsController < ApplicationController
     # render :action => 'new'
   end
 
+  def newuser
+    @event = Event.find(params[:id])
+
+    respond_to do |format|
+      format.html # newuser.html.erb
+      format.json {render json: @events}
+    end
+  end
+
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
