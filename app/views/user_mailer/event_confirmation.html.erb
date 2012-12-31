@@ -1,0 +1,9 @@
+<p>Hello <%= @event.admin %>,</p>
+
+<p>Your <%= @event.name %> event has been created. </p>
+
+<p>Please send the following link to your attendees: <%= newuser_url(@event) %></p>
+
+<p>To view and edit your current CarPoodle situation: <%= event_url(@event) %></p>
+
+<p>Happy CarPoodling!</p>
