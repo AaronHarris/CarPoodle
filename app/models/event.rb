@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :name, :description, :time, :place, :admin, :email
   has_many :drivers 
+  has_many :riders
   has_many :waitlists 
 end
 

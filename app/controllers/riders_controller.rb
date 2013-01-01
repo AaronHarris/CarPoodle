@@ -24,7 +24,8 @@ class RidersController < ApplicationController
   # GET /riders/new
   # GET /riders/new.json
   def new
-    @rider = Rider.new
+    #@rider = Rider.new
+    @rider = Rider.new(:event_id => params[:event_id])
 
     respond_to do |format|
       format.html # new.html.erb

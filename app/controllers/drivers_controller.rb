@@ -24,7 +24,7 @@
   # GET /drivers/new
   # GET /drivers/new.json
   def new
-    @driver = Driver.new
+    @driver = Driver.new(:event_id => params[:event_id])
 
     respond_to do |format|
       format.html # new.html.erb

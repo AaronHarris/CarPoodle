@@ -41,6 +41,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.1)
+    hirb (0.7.0)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.0.2)
@@ -106,6 +107,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (= 3.2.2)
+  hirb
   jquery-rails (= 2.0.2)
   pg (= 0.12.2)
   rails (= 3.2.9)

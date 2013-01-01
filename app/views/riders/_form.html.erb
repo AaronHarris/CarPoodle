@@ -1,4 +1,4 @@
-<%= form_for(@rider) do |f| %>
+<%= form_for([@rider.event, @rider]) do |f| %>
   <% if @rider.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@rider.errors.count, "error") %> prohibited this rider from being saved:</h2>
@@ -15,14 +15,7 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :driver_id %><br />
-    <%= f.number_field :driver_id %>
-  </div>
-  <div class="field">
-    <%= f.label :waitlist_id %><br />
-    <%= f.number_field :waitlist_id %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
