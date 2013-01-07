@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "carpoodledev@gmail.com"
+  default from: "carpoodleapp@gmail.com"
 
   def event_confirmation(event) 
   	@event = event
