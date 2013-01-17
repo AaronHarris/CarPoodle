@@ -11,6 +11,19 @@
     </div>
   <% end %>
 
+  <style>
+      /****  TEMPORARY STYLE FOR CURRENT VERSION OF THE FORM ****/
+      .field, .actions{
+        display:block;
+        float:left;
+        padding-right:20px;
+      }
+      .actions{
+        clear:both;
+        margin-bottom: 15px;
+      }
+  </style>
+
   <div class="field">
     <%= f.label "Event Name" %><br />
     <%= f.text_field :name %>
@@ -42,6 +55,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit %> <br/><br/>
   </div>
 <% end %>

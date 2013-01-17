@@ -1,14 +1,22 @@
+
+
 <div class="jumbotron">
   <h2>Easy Carpooling</h2>
   <p class="lead">Figure out who you're riding with, hassel free.</p>
   <p class="show row pull-right">
-  	<%= link_to "Create an Event", new_event_path(), {:class => 'btn btn-large btn-success'} %>
+  	<%= link_to "Create an Event", '#', {:class => 'btn btn-large btn-success', :id => 'newEventButton'} %>
+
+     <% ## THE ABOVE NEEDS A JAVASCRIPT ONCLICK EVENT, also new_event_path()  was the original address## %>
+
+
   	<!--<a class="btn btn-large btn-success" href="#">Create an Event</a>--></p>
 </div>
   <br/><br/><br/>
   <hr class="show">
 
- <%= render :partial => '/events/new' %>
+  <div id="newEventForm">
+    <%= render :partial => '/events/new' %>
+  </div>
 
 <div class="row-fluid marketing">
   <div class="span6">
@@ -21,3 +29,9 @@
     <p>Just enter your name either as a driver or a rider and you're done!</p>
   </div>
 </div>
+
+<script>
+$("#newEventButton").click(function () {
+  $("#newEventForm").slideToggle();
+});
+</script>
