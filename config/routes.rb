@@ -1,13 +1,9 @@
 Poodle::Application.routes.draw do
 
   get "static_pages/about"
-
+  match '/about' => 'static_pages#about'
   get "static_pages/contact"
-
-  get "welcome/about"
-  match '/about' => 'welcome#about'
-  get "welcome/contact"
-  match '/contact' => 'welcome#contact'
+  match '/contact' => 'static_pages#contact'
 
 #  resources :riders
 #  resources :drivers
