@@ -44,11 +44,22 @@
         clear:both;
       }
 
+      /* Social Network */
+
+      #socialnetwork{
+        position:fixed;
+        top:10px;
+        right:10px;
+      }
+
 	</style>
 	<meta charset="utf-8" />
 
 </head>
 <body>
+    <div id="social network">
+      <%= link_to image_tag("facebook.png", :alt => "Facebook", :title => "Like us on Facebook!"), 'https://www.facebook.com/CarPoodle' %>
+    </div>
     <div class="container-narrow">
 
       <div class="masthead">
