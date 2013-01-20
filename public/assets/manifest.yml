@@ -1,17 +1,19 @@
 ---
-!binary "Z2x5cGhpY29ucy1oYWxmbGluZ3Mtd2hpdGUucG5n": glyphicons-halflings-white-27ae535ced0dc82c64894d995a87c467.png
-!binary "Z2x5cGhpY29ucy1oYWxmbGluZ3Mtd2hpdGUvaW5kZXgucG5n": glyphicons-halflings-white-27ae535ced0dc82c64894d995a87c467.png
-!binary "Z2x5cGhpY29ucy1oYWxmbGluZ3MucG5n": glyphicons-halflings-53e9bc853f8f473f50e90e5215daac1e.png
-!binary "Z2x5cGhpY29ucy1oYWxmbGluZ3MvaW5kZXgucG5n": glyphicons-halflings-53e9bc853f8f473f50e90e5215daac1e.png
-!binary "bG9nby5wbmc=": logo-fd294c5114768df159fee0df52cc5bf3.png
-!binary "bG9nby9pbmRleC5wbmc=": logo-fd294c5114768df159fee0df52cc5bf3.png
-!binary "cmFpbHMucG5n": rails-e19cc14e7b458337c25b4a0b230d6cac.png
-!binary "cmFpbHMvaW5kZXgucG5n": rails-e19cc14e7b458337c25b4a0b230d6cac.png
-!binary "cmlkZXIucG5n": rider-d1518e14cae6813865a59630303b558c.png
-!binary "cmlkZXIvaW5kZXgucG5n": rider-d1518e14cae6813865a59630303b558c.png
-!binary "d2hlZWwucG5n": wheel-eb39f266f5bb268760ac8e7635d58454.png
-!binary "d2hlZWwvaW5kZXgucG5n": wheel-eb39f266f5bb268760ac8e7635d58454.png
-!binary "YXBwbGljYXRpb24uanM=": application-2687fbf1174983592d60077a5248fc60.js
-!binary "YXBwbGljYXRpb24vaW5kZXguanM=": application-2687fbf1174983592d60077a5248fc60.js
-!binary "YXBwbGljYXRpb24uY3Nz": application-08b3779501a613f0173449480052c97e.css
-!binary "YXBwbGljYXRpb24vaW5kZXguY3Nz": application-08b3779501a613f0173449480052c97e.css
+glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
+glyphicons-halflings-white/index.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
+glyphicons-halflings.png: glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png
+glyphicons-halflings/index.png: glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png
+logo.png: logo-529be6e3c82e4e96d1e6e8751182bb43.png
+logo/index.png: logo-529be6e3c82e4e96d1e6e8751182bb43.png
+logotoo.png: logotoo-55527bfc30a9d676092d7a878243fba0.png
+logotoo/index.png: logotoo-55527bfc30a9d676092d7a878243fba0.png
+rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
+rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
+rider.png: rider-f1be56d58401e99dcf553f28a676fbad.png
+rider/index.png: rider-f1be56d58401e99dcf553f28a676fbad.png
+wheel.png: wheel-24e98b64c6ac3e2251c7cf68fa22524f.png
+wheel/index.png: wheel-24e98b64c6ac3e2251c7cf68fa22524f.png
+application.js: application-b346a8ea7249124030ae9ab5ff65b1da.js
+application/index.js: application-b346a8ea7249124030ae9ab5ff65b1da.js
+application.css: application-24e7e8ebb7c61b7a9657604eb4916f95.css
+application/index.css: application-24e7e8ebb7c61b7a9657604eb4916f95.css
