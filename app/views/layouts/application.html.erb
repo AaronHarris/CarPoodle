@@ -69,6 +69,8 @@
     <div class="container-narrow">
 
       <div class="masthead">
+<% 
+=begin %>
         <ul class="nav nav-pills pull-right">
           <li <%= if request.fullpath == "/"
                   'class=active'
@@ -80,8 +82,11 @@
                   'class=active'
                   end %>><%= link_to "Contact", '/contact' %></li>
         </ul> 
+        <% 
+=end %>
         <%= link_to image_tag("logotoo.png", :alt => "Logo", :style => "display:inline;"), '/' %>
       </div>
+
 
       <hr>
 
