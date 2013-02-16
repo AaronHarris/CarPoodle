@@ -33,5 +33,10 @@
 <script>
 $("#newEventButton").click(function () {
   $("#newEventForm").slideToggle();
+
+  $('html, body').animate({
+      scrollTop: $("#newEventForm").offset().top
+  }, 2000);
+
 });
 </script>

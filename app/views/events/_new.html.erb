@@ -13,50 +13,48 @@
 
   <style>
       /****  TEMPORARY STYLE FOR CURRENT VERSION OF THE FORM ****/
-      .field, .actions{
-        display:block;
-        float:left;
-        padding-right:20px;
-        line-height: 0px;
-        width:45%;
-      }
-      .actions{
-        clear:both;
-        margin-bottom: 15px;
+      #eventForm{
+        width:80%;
+        margin:0 auto;
       }
   </style>
 
-  <div class="field">
-    <%= f.label "Event Name" %><br />
-    <%= f.text_field :name %>
-  </div>
+<div id="eventForm">
+  <form>
+    <div class="control-group">
+      <div class="controls">
+       <%= f.text_field :name, :placeholder => "Name", :class => "input-xxlarge" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.text_area :description, :placeholder => "Description", :rows => 5, :class => "input-xxlarge" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.text_field :time, :placeholder => "Time", :class => "input-xxlarge" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.text_field :admin, :placeholder => "Host Name", :class => "input-xxlarge" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.text_field :email, :placeholder => "Host Email", :class => "input-xxlarge" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit "Create Event", :class => 'btn pull-right' %>
+      </div>
+    </div>
+  </form>
+</div>
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
+<br/>
+<h1>&nbsp;</h1>
 
-  <div class="field">
-    <%= f.label :time %><br />
-    <%= f.text_field :time %>
-  </div>
-
-  <div class="field">
-    <%= f.label :place %><br />
-    <%= f.text_field :place %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Adminstrator Name" %><br />
-    <%= f.text_field :admin %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Adminstrator Email" %><br />
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %> <br/>
-  </div>
 <% end %>
