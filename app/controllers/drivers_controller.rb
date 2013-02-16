@@ -1,4 +1,7 @@
-  class DriversController < ApplicationController
+class DriversController < ApplicationController
+
+  before_filter :get_event, :except => [:index]
+
   # GET /drivers
   # GET /drivers.json
   def index
@@ -34,17 +37,18 @@
 
   # GET /drivers/1/edit
   def edit
-    @driver = Driver.find(params[:id])
+    #@driver = Driver.find(params[:id])
+    @driver = @event.drivers.find()
   end
 
   # POST /drivers
   # POST /drivers.json
   def create
-    @driver = Driver.new(params[:driver])
+    @driver = @event.drivers.new(params[:driver])
 
     respond_to do |format|
       if @driver.save
-        format.html { redirect_to @driver, notice: 'Driver was successfully created.' }
+        format.html { redirect_to [@event, @driver], notice: 'Driver was successfully created.' }
         format.json { render json: @driver, status: :created, location: @driver }
       else
         format.html { render action: "new" }
@@ -80,4 +84,9 @@
       format.json { head :no_content }
     end
   end
+
+  def get_event
+    @event = Event.find(params[:event_id])
+  end
+
 end

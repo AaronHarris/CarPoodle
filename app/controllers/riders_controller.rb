@@ -1,4 +1,7 @@
 class RidersController < ApplicationController
+
+  before_filter :get_event, :except => [:index]
+
   # GET /riders
   # GET /riders.json
   def index
@@ -24,6 +27,7 @@ class RidersController < ApplicationController
   # GET /riders/new
   # GET /riders/new.json
   def new
+    #@event = Event.find(params[:id])
     #@rider = Rider.new
     @rider = Rider.new(:event_id => params[:event_id])
 
@@ -35,17 +39,17 @@ class RidersController < ApplicationController
 
   # GET /riders/1/edit
   def edit
-    @rider = Rider.find(params[:id])
+    @rider = @event.Rider.find(params[:id])
   end
 
   # POST /riders
   # POST /riders.json
   def create
-    @rider = Rider.new(params[:rider])
+    @rider = @event.riders.new(params[:rider])
 
     respond_to do |format|
       if @rider.save
-        format.html { redirect_to @rider, notice: 'Rider was successfully created.' }
+        format.html { redirect_to [@event, @rider], notice: 'Rider was successfully created.' }
         format.json { render json: @rider, status: :created, location: @rider }
       else
         format.html { render action: "new" }
@@ -81,4 +85,9 @@ class RidersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def get_event
+    @event = Event.find(params[:event_id])
+  end
+
 end
