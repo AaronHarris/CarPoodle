@@ -38,7 +38,7 @@ class DriversController < ApplicationController
   # GET /drivers/1/edit
   def edit
     #@driver = Driver.find(params[:id])
-    @driver = @event.drivers.find()
+    @driver = @event.drivers.find(params[:id])
   end
 
   # POST /drivers
@@ -60,11 +60,12 @@ class DriversController < ApplicationController
   # PUT /drivers/1
   # PUT /drivers/1.json
   def update
-    @driver = Driver.find(params[:id])
+    #@driver = Driver.find(params[:id])
+    @driver = @event.drivers.find(params[:id])
 
     respond_to do |format|
       if @driver.update_attributes(params[:driver])
-        format.html { redirect_to @driver, notice: 'Driver was successfully updated.' }
+        format.html { redirect_to [@event, @driver], notice: 'Driver was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

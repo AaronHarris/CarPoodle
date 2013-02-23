@@ -39,7 +39,7 @@ class RidersController < ApplicationController
 
   # GET /riders/1/edit
   def edit
-    @rider = @event.Rider.find(params[:id])
+    @rider = @event.riders.find(params[:id])
   end
 
   # POST /riders
@@ -61,11 +61,12 @@ class RidersController < ApplicationController
   # PUT /riders/1
   # PUT /riders/1.json
   def update
-    @rider = Rider.find(params[:id])
+    #@rider = Rider.find(params[:id])
+    @rider = @event.riders.find(params[:id])
 
     respond_to do |format|
       if @rider.update_attributes(params[:rider])
-        format.html { redirect_to @rider, notice: 'Rider was successfully updated.' }
+        format.html { redirect_to [@event, @rider], notice: 'Rider was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
