@@ -16,6 +16,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @drivers = Driver.where(event_id: @event)
     @riders = Rider.where(driver_id: @drivers)
+    #@riders = Rider.where(event_id: @event)
 
     respond_to do |format|
       format.html # show.html.erb

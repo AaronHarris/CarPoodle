@@ -6,18 +6,20 @@
 <dd><em><%= @event.description %></em></dd>
 <br/><br/>
 
-<p><u>Drivers </u></p>
-<% @drivers.each do |driver| %>
-	<em><%= driver.name %></em><br/>
-	<% @riders.each do |rider|
-		#
-		# Temporary solution, want to optimize later
-		#
-		if rider.driver_id == driver.id %>
-		<em><%= rider.name %></em><br/>
-	<% 	end
-	end %>
-<% end %>
+<!-- Drivers -->
+<ul>
+	<% @drivers.each do |driver| %>
+		<li><%= driver.name %></li>
+		<ul>
+			<!-- Riders -->
+			<% @riders.each do |rider|   # Temporary solution, want to optimize later  %>
+				<% if rider.driver_id == driver.id %>
+					<li><%= rider.name %></li>
+				<% 	end %>
+		<% end %>
+		</ul>
+	<% end %>
+</ul>
 
 <% if @drivers.empty? %>
 	<em>Currently no drivers...</em><br/>
