@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 	private
 
 	def render_404
-		render :template => 'public/404', :layout => false, :status => :not_found
+		render :template => 'public/404.html', :layout => false, :status => :not_found
 		# raise ActionController::RoutingError.new('Not Found')
 	end
 end
