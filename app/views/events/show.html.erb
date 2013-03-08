@@ -1,3 +1,21 @@
+<style>
+	.driver, .rider, .ghostRider{
+		display:block;
+		margin:10px;
+	}
+	.rider{
+		margin-left:25px;
+		background: #999999;
+	}
+	.ghostRider{
+		background: #333333;
+		height:1.5em;
+	}
+	.driver{
+		width:300px;
+	}
+</style>
+
 <% if notice %>
 	<div id="notice" class="alert alert-success"><%= notice %></div>
 <% end %>
@@ -9,15 +27,15 @@
 <!-- Drivers -->
 <ul>
 	<% @drivers.each do |driver| %>
-		<li><%= driver.name %></li>
-		<ul>
+		<h3><%= driver.name %></h3>
 			<!-- Riders -->
+			<ul class="driver" id="driver<%= driver.id %>">
 			<% @riders.each do |rider|   # Temporary solution, want to optimize later  %>
 				<% if rider.driver_id == driver.id %>
-					<li><%= rider.name %></li>
+					<li class="rider driver<%= driver.id %>" id="rider<%= rider.id %>"><%= rider.name%></li>
 				<% 	end %>
-		<% end %>
-		</ul>
+			<% end %>
+			</ul>
 	<% end %>
 </ul>
 
@@ -38,3 +56,13 @@
 		})
 	</script>
 <% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $( "#driver4, #driver5" ).sortable({
+      connectWith: ".driver",
+      placeholder: "ghostRider"
+    }).disableSelection();
+  });
+
+</script>
