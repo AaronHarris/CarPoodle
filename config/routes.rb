@@ -14,7 +14,6 @@ Poodle::Application.routes.draw do
     resources :drivers, :riders
   end
 
-
   match '/events/:id/newuser' => 'events#newuser', :as => :newuser
 
   # The priority is based upon order of creation:
