@@ -18,7 +18,7 @@
 				<li class="headrider unmoveable"><%= driver.name %></li>
 			<% @riders.each do |rider|   # Temporary solution, want to optimize later  %>
 				<% if rider.driver_id == driver.id %>
-					<%= content_tag_for :li, rider, :data => "this" do %>
+					<%= content_tag_for :li, rider, :"data-url" =>	event_rider_path(@event,rider) do %>
 						<%= rider.name %>
 					<% end %>
 				<% 	end %>
@@ -30,6 +30,8 @@
 <% if @drivers.empty? %>
 	<em>Currently no drivers...</em><br/>
 <% end %>
+
+
 <br />
 
 <div style="display:block; width:100%; height:10px; clear:both;">&nbsp;</div>
@@ -37,13 +39,18 @@
 <br/>
 
 <script type="text/javascript">
+jQuery.ajaxSetup({ 
+  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+})
+
 	$(function() {
 	$( ".driver" ).sortable({
       items: "li:not(.unmoveable)",
 	  connectWith: ".driver",
 	  placeholder: "ghostRider",
 	  update: function(){
-	  	$.post($(this).data(), $(this).parent(".driver").attr('id'));
+	  	$.post($(this).data("url"), $(this).parent(".driver").attr("id"))
+		}
 	  }
 	}).disableSelection();
 	})

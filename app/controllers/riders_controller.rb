@@ -68,6 +68,7 @@ class RidersController < ApplicationController
       if @rider.update_attributes(params[:rider])
         format.html { redirect_to [@event, @rider], notice: 'Rider was successfully updated.' }
         format.json { head :no_content }
+        format.js { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @rider.errors, status: :unprocessable_entity }
