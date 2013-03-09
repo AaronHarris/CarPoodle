@@ -14,11 +14,11 @@
 <ul>
 	<% @drivers.each do |driver| %>
 			<!-- Riders -->
-			<ul class="driver" id="driver<%= driver.id %>">
+			<ul class="driver" id="driver_<%= driver.id %>">
 				<li class="headrider unmoveable"><%= driver.name %></li>
 			<% @riders.each do |rider|   # Temporary solution, want to optimize later  %>
 				<% if rider.driver_id == driver.id %>
-					<%= content_tag_for :li, rider do %>
+					<%= content_tag_for :li, rider, :data => "this" do %>
 						<%= rider.name %>
 					<% end %>
 				<% 	end %>
@@ -41,7 +41,10 @@
 	$( ".driver" ).sortable({
       items: "li:not(.unmoveable)",
 	  connectWith: ".driver",
-	  placeholder: "ghostRider"
+	  placeholder: "ghostRider",
+	  update: function(){
+	  	$.post($(this).data(), $(this).parent(".driver").attr('id'));
+	  }
 	}).disableSelection();
 	})
 
