@@ -1,25 +1,41 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+	
 	.driver, .rider, .ghostRider{
 		display:block;
+    	list-style-type: none;
 	}
 	.rider, .ghostRider{
-		padding:20px;
-		margin:10px 0;
+		padding:15px;
+		margin:5px 0;
+		margin-left:15px;
 	}
 	.rider{
-		margin-left:25px;
-		background: #999999;
+		background:#1d3555;
+		color:#fff;
 	}
 	.ghostRider{
-		background: #333333;
-		min-height:25px;
+		min-height:15px;
+		background-color:rgba(29,53,85,.5);
 	}
 	.driver{
+		background-image: image-url("carbackground.png");
+		background-repeat: no-repeat;
 		width:300px;
-		background:#440000;
 		padding:5px;
-		min-height:25px;
+		margin:5px;
+		float:left;
+		min-height:100px;
+	}
+
+	.headrider{
+		padding-top:27px;
+		padding-left:41px;
+		padding-right:0;
+		padding-bottom:20px;
+		margin:5px 0;
+		margin-left:10px;
+		font-size:2em;
+		font-weight:bold;
 	}
