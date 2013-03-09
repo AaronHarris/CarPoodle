@@ -38,17 +38,17 @@
     </div>
     <div class="control-group">
       <div class="controls">
-        <%= f.text_field :admin, :placeholder => "Host Name", :class => "input-xxlarge" %>
+        <%= f.text_field :admin, :placeholder => "Your Name", :class => "input-xxlarge" %>
       </div>
     </div>
     <div class="control-group">
       <div class="controls">
-        <%= f.text_field :email, :placeholder => "Host Email", :class => "input-xxlarge" %>
+        <%= f.email_field :email, :placeholder => "Your Email", :class => "input-xxlarge" %>
       </div>
     </div>
     <div class="control-group">
       <div class="controls">
-        <%= f.submit "Create Event", :class => 'btn pull-right' %>
+        <%= f.submit "Create Event", :class => 'btn btn-primary pull-right' %>
       </div>
     </div>
   </form>

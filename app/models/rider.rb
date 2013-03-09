@@ -1,5 +1,5 @@
 class Rider < ActiveRecord::Base
-  attr_accessible :driver_id, :name, :waitlist_id, :event_id
+  attr_accessible :driver_id, :name, :waitlist_id, :event_id, :telephone
   belongs_to :driver 
   belongs_to :event
   belongs_to :waitlist
