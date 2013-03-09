@@ -39,10 +39,9 @@
 <br/>
 
 <script type="text/javascript">
-jQuery.ajaxSetup({ 
-  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
-})
-
+	jQuery.ajaxSetup({ 
+	  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+	})
 	$(function() {
 	$( ".driver" ).sortable({
       items: "li:not(.unmoveable)",
@@ -52,7 +51,7 @@ jQuery.ajaxSetup({
 	  	$.post($(this).data("url"), $(this).parent(".driver").attr("id"))
 		}
 	  }
-	}).disableSelection();
+	).disableSelection();
 	})
 
 	$(document).ready(function () {
