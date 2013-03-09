@@ -18,7 +18,9 @@
 				<li class="headrider unmoveable"><%= driver.name %></li>
 			<% @riders.each do |rider|   # Temporary solution, want to optimize later  %>
 				<% if rider.driver_id == driver.id %>
-					<li class="rider driver<%= driver.id %>" id="rider<%= rider.id %>"><%= rider.name%></li>
+					<%= content_tag_for :li, rider do %>
+						<%= rider.name %>
+					<% end %>
 				<% 	end %>
 			<% end %>
 			</ul>
