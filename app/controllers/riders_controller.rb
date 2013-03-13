@@ -1,6 +1,7 @@
 class RidersController < ApplicationController
 
   before_filter :get_event, :except => [:index]
+  before_filter :get_opendriver, :except => [:index, :show]
 
   # GET /riders
   # GET /riders.json
@@ -30,6 +31,9 @@ class RidersController < ApplicationController
     #@event = Event.find(params[:id])
     #@rider = Rider.new
     @rider = Rider.new(:event_id => params[:event_id])
+    #@drivers = @event.drivers
+
+    #@rider.driver_id = @opendriver.id
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,6 +50,7 @@ class RidersController < ApplicationController
   # POST /riders.json
   def create
     @rider = @event.riders.new(params[:rider])
+    @rider.driver_id = @opendriver.id
 
     respond_to do |format|
       if @rider.save
@@ -90,6 +95,14 @@ class RidersController < ApplicationController
 
   def get_event
     @event = Event.find(params[:event_id])
+  end
+
+  def get_opendriver
+    @drivers = @event.drivers
+    @opendrivers = for d in @drivers
+                      d.spots > d.riders.size
+                    end
+    @opendriver = @opendrivers.first
   end
 
 end
