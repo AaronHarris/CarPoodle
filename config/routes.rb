@@ -10,6 +10,8 @@ Poodle::Application.routes.draw do
 
   resources :waitlists
 
+  # match '/:encrypted_id' => 'events#show' #, constraints: {encrypted_id: /.{16}/}
+
   resources :events do
     resources :drivers, :riders
   end

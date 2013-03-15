@@ -55,7 +55,9 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
-
+    @event.encrypted_id = SecureRandom.hex(8)
+    @event.admin_key = SecureRandom.hex(4)
+    
     respond_to do |format|
       if @event.save
 
