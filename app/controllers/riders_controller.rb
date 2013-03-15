@@ -1,7 +1,7 @@
 class RidersController < ApplicationController
 
   before_filter :get_event, :except => [:index]
-  before_filter :get_opendriver, :except => [:index, :show]
+  before_filter :get_opendriver, :only => [:new, :create]
 
   # GET /riders
   # GET /riders.json
