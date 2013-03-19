@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315214758) do
+ActiveRecord::Schema.define(:version => 20130319195234) do
 
   create_table "drivers", :force => true do |t|
     t.string   "name"
@@ -39,17 +39,11 @@ ActiveRecord::Schema.define(:version => 20130315214758) do
   create_table "riders", :force => true do |t|
     t.string   "name"
     t.integer  "driver_id"
-    t.integer  "waitlist_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "event_id"
-    t.string   "telephone"
-  end
-
-  create_table "waitlists", :force => true do |t|
-    t.integer  "event_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "event_id"
+    t.string   "telephone"
+    t.boolean  "waitlist"
   end
 
 end

@@ -50,11 +50,11 @@ class RidersController < ApplicationController
   # POST /riders.json
   def create
     @rider = @event.riders.new(params[:rider])
-    @rider.driver_id = @opendriver.id
+    @rider.driver_id = @opendriver.id if @opendriver
 
     respond_to do |format|
       if @rider.save
-        @opendriver.update_full
+        @opendriver.update_full if @opendriver
         format.html { redirect_to [@event, @rider], notice: 'Rider was successfully created.' }
         format.json { render json: @rider, status: :created, location: @rider }
       else
