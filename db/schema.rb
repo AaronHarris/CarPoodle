@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(:version => 20130315214758) do
     t.string   "name"
     t.integer  "spots"
     t.integer  "event_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "telephone"
-    t.boolean  "full"
+    t.boolean  "full",       :default => false
   end
 
   create_table "events", :force => true do |t|

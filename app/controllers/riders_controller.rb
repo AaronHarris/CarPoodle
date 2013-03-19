@@ -54,6 +54,7 @@ class RidersController < ApplicationController
 
     respond_to do |format|
       if @rider.save
+        @opendriver.update_full
         format.html { redirect_to [@event, @rider], notice: 'Rider was successfully created.' }
         format.json { render json: @rider, status: :created, location: @rider }
       else
@@ -98,11 +99,7 @@ class RidersController < ApplicationController
   end
 
   def get_opendriver
-    @drivers = @event.drivers
-    @opendrivers = for d in @drivers
-                      d.spots > d.riders.size
-                    end
-    @opendriver = @opendrivers.first
+    @opendriver = @event.drivers.find_by_full(false);
   end
 
 end
