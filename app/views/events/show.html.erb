@@ -31,6 +31,16 @@
 	<em>Currently no drivers...</em><br/>
 <% end %>
 
+<h6>Waitlisted</h6>
+<% @waitlists.each do |waitlist| %>
+	<ul>
+		<li><%= waitlist.name %></li>
+	</ul>
+<% end %> 
+
+<% if @waitlists.empty? %>
+	<em>Currently no one waitlisted...</em><br/>
+<% end %>
 
 <br />
 
