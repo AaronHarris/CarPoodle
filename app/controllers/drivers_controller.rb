@@ -48,6 +48,15 @@ class DriversController < ApplicationController
 
     respond_to do |format|
       if @driver.save
+
+        for i in 1..@driver.spots do
+          @waitlistrider = @event.riders.find_by_waitlist(true)
+          @waitlistrider.update_driver(@driver.id) if @waitlistrider
+          @waitlistrider.update_waitlist if @waitlistrider
+        end
+
+        @driver.update_full
+
         format.html { redirect_to [@event, @driver], notice: 'Driver was successfully created.' }
         format.json { render json: @driver, status: :created, location: @driver }
       else
