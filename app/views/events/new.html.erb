@@ -35,6 +35,11 @@ $("#newEventButton").click(function () {
   $('html, body').animate({
       scrollTop: $("#newEventForm").offset().top
   }, 2000);
-
 });
+
+<% unless @event.errors.any? %>
+
+$('#newEventForm').hide();
+
+<% end %>
 </script>
