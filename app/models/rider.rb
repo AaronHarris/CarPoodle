@@ -5,6 +5,8 @@ class Rider < ActiveRecord::Base
   belongs_to :driver 
   belongs_to :event
 
+  validates_presence_of :name
+
   before_save :set_waitlist
   
   def set_waitlist

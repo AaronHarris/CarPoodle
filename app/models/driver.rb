@@ -5,6 +5,8 @@ class Driver < ActiveRecord::Base
   has_many :riders
   belongs_to :event 
 
+  validates_presence_of :name, :spots
+
   before_save :set_full
 	def set_full
 		if (self.spots > self.riders.size) 
