@@ -1,4 +1,6 @@
 class Rider < ActiveRecord::Base
+    obfuscate_id :spin => 69686322
+
   attr_accessible :driver_id, :name, :event_id, :telephone, :waitlist
   belongs_to :driver 
   belongs_to :event

@@ -54,6 +54,8 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.21)
     multi_json (1.6.1)
+    obfuscate_id (0.0.3)
+      rails (~> 3.2.1)
     pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -111,6 +113,7 @@ DEPENDENCIES
   coffee-rails (= 3.2.2)
   hirb
   jquery-rails (= 2.0.2)
+  obfuscate_id
   pg (= 0.12.2)
   rails (= 3.2.11)
   sass-rails (= 3.2.5)

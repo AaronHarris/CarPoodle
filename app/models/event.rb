@@ -1,9 +1,10 @@
 class Event < ActiveRecord::Base
+	obfuscate_id :spin => 75832164
+
   attr_accessible :name, :description, :time, :place, :admin, :email
   validates_presence_of :name
   has_many :drivers 
   has_many :riders
-  has_many :waitlists 
 end
 
 

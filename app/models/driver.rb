@@ -1,4 +1,6 @@
 class Driver < ActiveRecord::Base
+	obfuscate_id :spin => 50415581
+
   attr_accessible :event_id, :name, :spots, :telephone, :full
   has_many :riders
   belongs_to :event 
