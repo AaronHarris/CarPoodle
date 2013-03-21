@@ -63,7 +63,7 @@ class EventsController < ApplicationController
 
         UserMailer.event_confirmation(@event).deliver
 
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: "#{@event.admin}, your #{@event.name} was successfully created." }
         format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }
