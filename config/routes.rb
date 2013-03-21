@@ -18,6 +18,9 @@ Poodle::Application.routes.draw do
 
   match '/events/:id/newuser' => 'events#newuser', :as => :newuser
 
+  match '/events/:id/:adminkey' => 'events#admin', :via => :get, :as => :admin
+  match '/events/:id/admin' => 'events#adminsubmit', :via => :post, :as => :adminsubmit
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

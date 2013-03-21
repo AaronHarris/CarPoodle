@@ -99,4 +99,32 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def admin 
+    @event = Event.find(params[:id])
+    # @adminkey = Event.find(admin_key: params[:adminkey])
+
+    respond_to do |format|
+      if (params[:adminkey] == @event.admin_key)
+        format.html { render action: "admin" }
+      else
+        #puts "routing errorrrrrr"
+        raise ActionController::RoutingError.new('Not Found')
+      end
+    end
+  end
+
+  def adminsubmit
+    @event = Event.find(params[:id])
+
+    respond_to do |format|
+      if (params[:admin_key] == @event.admin_key) 
+        format.html { redirect_to "/events/#{params[:id]}/#{@event.admin_key}"}
+      else
+        format.html { render action: "edit" }
+      end
+    end
+  end
+
+
 end

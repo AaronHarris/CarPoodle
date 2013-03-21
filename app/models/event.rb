@@ -7,19 +7,3 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :name, :admin, :email
 end
-
-
-
-#
-#  create_table "events", :force => true do |t|
-#    t.string   "name"
-#    t.datetime "created_at",  :null => false
-#    t.datetime "updated_at",  :null => false
-#    t.string   "description"
-#    t.datetime "time"
-#    t.string   "place"
-#    t.string   "admin"
-#    t.string   "email"
-#  end
-#
-
