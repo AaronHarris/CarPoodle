@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Rider info</h2><br/>
 <p>
   <b>Name:</b>
   <%= @rider.name %>
@@ -7,7 +8,12 @@
 
 <p>
   <b>Driver:</b>
-  <%= @rider.driver_id %>
+  <%-# This line should be fixed:  <%= @rider.driver.name (ID: <%= @rider.driver_id -%>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @rider.event.name %> (ID: <%= @rider.event_id %>)
 </p>
 
 <p>
@@ -15,10 +21,6 @@
   <%= @rider.telephone %>
 </p>
 
-<p>
-  <b>Event:</b>
-  <%= @rider.event_id %>
-</p>
 
-
-<%= link_to 'Edit', edit_event_rider_path(@event, @rider) %> 
+<%= link_to 'Edit', edit_event_rider_path(@event, @rider) %> | 
+<%= link_to 'Back', @event %>

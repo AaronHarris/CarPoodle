@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Driver info</h2><br/>
 <p>
   <b>Name:</b>
   <%= @driver.name %>
@@ -7,12 +8,12 @@
 
 <p>
   <b>Spots:</b>
-  <%= @driver.spots %>
+  <%= @driver.riders.size %> out of <%= @driver.spots %> spots are occupied
 </p>
 
 <p>
   <b>Event:</b>
-  <%= @driver.event_id %>
+  <%= @event.name %> (ID: <%= @driver.event_id %>)
 </p>
 
 <p>
@@ -21,4 +22,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_event_driver_path(@event, @driver) %> 
+<%= link_to 'Edit', edit_event_driver_path(@event, @driver) %> | 
+<%= link_to 'Back', @event %>
