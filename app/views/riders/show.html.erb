@@ -7,11 +7,6 @@
 </p>
 
 <p>
-  <b>Driver:</b>
-  <%= @rider.driver.name %> (ID: <%= @rider.driver_id %>)
-</p>
-
-<p>
   <b>Event:</b>
   <%= @rider.event.name %> (ID: <%= @rider.event_id %>)
 </p>
@@ -21,6 +16,13 @@
   <%= @rider.telephone %>
 </p>
 
+<br/>
+<% if @rider.waitlist == true %>
+	<p> You are currently on the waitlist, you will be assigned a driver as soon as possible.  </p>
+<% else %>
+	<p> You currently are assigned to a driver </p>
+<% end %>
+<br/>
 
 <%= link_to 'Edit', edit_event_rider_path(@event, @rider) %> | 
 <%= link_to 'Back', @event %>
