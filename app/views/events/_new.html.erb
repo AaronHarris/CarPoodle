@@ -18,6 +18,10 @@
         width:80%;
         margin:0 auto;
       }
+
+      .option-large{
+        width: auto !important;
+      }
   </style>
 
 <div id="eventForm">
@@ -34,7 +38,7 @@
     </div>
     <div class="control-group">
       <div class="controls">
-        <%= f.text_field :time, :placeholder => "Time", :class => "input-xxlarge" %>
+        <%= f.datetime_select :time, {:default => 1.week.from_now, :start_year => DateTime.now.year, :ampm => true}, {:class => "option-large"} %>
       </div>
     </div>
     <div class="control-group">

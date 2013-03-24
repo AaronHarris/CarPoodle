@@ -1,5 +1,7 @@
 <h1>Editing event</h1>
 
+<p>If you are the organizer for this event, check your email <%= @event.private_email %> for the admin key.</p>
+
 <%= render :partial => '/events/adminkey' %>
 
 <!-- <%= link_to 'Show', @event %> |

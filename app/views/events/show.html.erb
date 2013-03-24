@@ -1,10 +1,16 @@
 <% if notice %>
-	<div id="notice" class="alert alert-success"><%= notice %></div>
+    <div id="notice" class="alert alert-success"><%= notice %></div>
 <% end %>
 
 <h1 id="eventName" style="display:inline;"><%= @event.name %></h1>
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', events_path %><br />
+<p>To sign up for this carpool, visit <%= link_to "#{newuser_url}", newuser_url %> &nbsp;<%= link_to image_tag("facebook_share.png", class: "facebook_icon", alt: "Facebook"), share_with_facebook_url({ url:  newuser_url,
+                           title: "#{@event.name} Carpool Signup",
+                           images: {0 => "#{root_url}assets/logo100x100.png"},
+                           summary: "Carpoodle is the fastest and easy way to organize a Carpool with friends!" }),
+                           target: "_blank" %>
+                                   </p>
 <br/><br/>
 <dd><em><%= @event.description %></em></dd>
 <br/>
@@ -12,36 +18,35 @@
 
 <!-- Drivers -->
 <ul>
-	<% @drivers.each do |driver| %>
-			<!-- Riders -->
-			<ul class="driver" id="driver_<%= driver.id %>">
-				<li class="headrider unmoveable"><%= driver.name %></li>
-			<% @riders.each do |rider|   # Temporary solution, want to optimize later  %>
-				<% if rider.driver_id == driver.id %>
-					<%= content_tag_for :li, rider, :"data-url" =>	event_rider_path(@event,rider) do %>
-						<%= rider.name %>
-					<% end %>
-				<% 	end %>
-			<% end %>
-			</ul>
-	<% end %>
+    <% @drivers.each do |driver| %>
+            <!-- Riders -->
+            <ul class="driver" id="driver_<%= driver.id %>">
+                <li class="headrider unmoveable"><%= driver.name %></li>
+            <% @riders.each do |rider|   # Temporary solution, want to optimize later  %>
+                <% if rider.driver_id == driver.id %>
+                    <%= content_tag_for :li, rider, :"data-url" =>  event_rider_path(@event,rider) do %>
+                        <%= rider.name %>
+                    <% end %>
+                <%  end %>
+            <% end %>
+            </ul>
+    <% end %>
 </ul>
 
 <% if @drivers.empty? %>
-	<em>Currently no drivers...</em><br/>
+    <em><% if @riders.empty? %>Your Carpoodle event is now ready! <%end%>Share the link above to have participants sign up to drive.</em><br/>
 <% end %>
 
 <div style="clear:both"></div>
 
-<h6>Waitlisted</h6>
+<% unless @waitlists.empty? %>
+<h6>Waitlisted participants without a ride</h6>
 <% @waitlists.each do |waitlist| %>
-	<ul>
-		<li><%= waitlist.name %></li>
-	</ul>
+    <ul>
+        <li><%= waitlist.name %></li>
+    </ul>
 <% end %> 
 
-<% if @waitlists.empty? %>
-	<em>Currently no one waitlisted...</em><br/>
 <% end %>
 
 <br />
@@ -51,22 +56,22 @@
 <br/>
 
 <script type="text/javascript">
-	jQuery.ajaxSetup({ 
-	  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
-	})
-	$(function() {
-	$( ".driver" ).sortable({
+    jQuery.ajaxSetup({ 
+      'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+    })
+    $(function() {
+    $( ".driver" ).sortable({
       items: "li:not(.unmoveable)",
-	  connectWith: ".driver",
-	  placeholder: "ghostRider",
-	  update: function(){
-	  	$.post($(this).data("url"), $(this).parent(".driver").attr("id"))
-		}
-	  }
-	).disableSelection();
-	})
+      connectWith: ".driver",
+      placeholder: "ghostRider",
+      update: function(){
+        $.post($(this).data("url"), $(this).parent(".driver").attr("id"))
+        }
+      }
+    ).disableSelection();
+    })
 
-	$(document).ready(function () {
-		$('#notice').delay(2000).fadeOut('slow');
-	})
+    $(document).ready(function () {
+        $('#notice').delay(2000).fadeOut('slow');
+    })
 </script>
