@@ -1,7 +1,7 @@
 <%= form_for [@event, @rider] do |f| %>
   <% if @rider.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@rider.errors.count, "error") %> prohibited this rider from being saved:</h2>
+      <h6><%= pluralize(@rider.errors.count, "error") %> prohibited this rider from being saved:</h6>
 
       <ul>
       <% @rider.errors.full_messages.each do |msg| %>

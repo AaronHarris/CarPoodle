@@ -6,6 +6,7 @@ class Driver < ActiveRecord::Base
   belongs_to :event 
 
   validates_presence_of :name, :spots
+  validates_numericality_of :spots, only_integer: true, greater_than_or_equal_to: 1
 
   before_save :set_full
 	def set_full
