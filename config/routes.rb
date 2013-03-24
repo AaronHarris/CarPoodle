@@ -16,7 +16,8 @@ Poodle::Application.routes.draw do
     resources :drivers, :riders
   end
 
-  match '/events/:id/newuser' => 'events#newuser', :as => :newuser
+  match '/:id' => 'events#newuser', :as => :newuser
+  match '/events/:id/newuser' => 'events#newuser', :as => :newuser_full
 
   match '/events/:id/:adminkey' => 'events#admin', :via => :get, :as => :admin
   match '/events/:id/admin' => 'events#adminsubmit', :via => :post, :as => :adminsubmit
