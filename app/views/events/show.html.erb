@@ -2,9 +2,10 @@
     <div id="notice" class="alert alert-success"><%= notice %></div>
 <% end %>
 
-<h1 id="eventName" style="display:inline;"><%= @event.name %></h1>
+<h1 id="eventName" style="display:inline;"><%= @event.name %></h1>  
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %><br />
+<br/>
 <p>To sign up for this carpool, visit <%= link_to "#{newuser_url}", newuser_url %> &nbsp;<%= link_to image_tag("facebook_share.png", class: "facebook_icon", alt: "Facebook"), share_with_facebook_url({ url:  newuser_url,
                            title: "#{@event.name} Carpool Signup",
                            images: {0 => "#{root_url}assets/logo100x100.png"},
