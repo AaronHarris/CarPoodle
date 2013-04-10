@@ -2,5 +2,11 @@
 
 <%= render 'form' %>
 
-
 <%= link_to 'Back', newuser_path(@event) %>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('input#driver_telephone').mask("(999) 999-9999");
+});	
+</script>
